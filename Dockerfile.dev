@@ -19,5 +19,8 @@ COPY . .
 # Exponer puerto
 EXPOSE 5173
 
+# Exponer puerto
+EXPOSE 5173
+
 # Comando por defecto
 CMD ["npm", "run", "dev"]
