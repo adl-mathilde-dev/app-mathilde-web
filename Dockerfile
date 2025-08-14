@@ -23,7 +23,7 @@ FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Exponer puerto
-EXPOSE 80
+EXPOSE 5173
 
 # Comando por defecto
 CMD ["nginx", "-g", "daemon off;"]
