@@ -1,8 +1,8 @@
-import { importShared } from './__federation_fn_import-BKb1h4mk.js';
-import { j as jsxRuntimeExports } from './jsx-runtime-CsM3lTE3.js';
-import { p as p_, a as gp } from './ui-mathilde-web-D4BhIZOZ.js';
-import { a as axios } from './sweetalert2.all-BgYO93wr.js';
-import { useAuth } from './__federation_expose_AutenticationService-Dca20n4F.js';
+import { importShared } from './__federation_fn_import-Dhgpavzc.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-Bje5h6iL.js';
+import { V as VN, N as Ny } from './ui-mathilde-web-DDewq026.js';
+import { a as axios } from './sweetalert2.esm.all-CcrGM5VA.js';
+import { useAuth } from './__federation_expose_AutenticationService-Bb6x-Atq.js';
 
 const postRequest = async (url, data) => {
   try {
@@ -104,11 +104,11 @@ const ValidationPass = () => {
     setIsActive(true);
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex w-full", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2/4 border-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx(p_, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2/4 border-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx(VN, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2/4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { className: "w-3/5 px-10 bg-white mx-auto rounded-lg flex flex-col justify-center h-full", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl text-center mb-6", children: "Hemos enviado un código OTP al correo electrónico registrado para activar tu cuenta." }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex w-full justify-evenly", children: Array.from({ length: 6 }).map((_, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        gp,
+        Ny,
         {
           type: "text",
           classInclude: "mth-input-code text-center",

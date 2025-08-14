@@ -1,4 +1,4 @@
-import { a as axios } from './sweetalert2.all-BgYO93wr.js';
+import { a as axios } from './sweetalert2.esm.all-CcrGM5VA.js';
 
 const API_URL = "https://mthmocks.pruebasmathilde.com/castlemock/mock/rest/project/nIVSsr/application/YPlsJX/register";
 const registerUser = async (userData) => {

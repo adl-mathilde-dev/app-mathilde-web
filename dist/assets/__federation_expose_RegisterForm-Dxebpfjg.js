@@ -1,11 +1,11 @@
-import { importShared } from './__federation_fn_import-BKb1h4mk.js';
-import { j as jsxRuntimeExports } from './jsx-runtime-CsM3lTE3.js';
-import { p as p_, a as gp, M as Mp, i as il, m as m_, s as s_, c as br } from './ui-mathilde-web-D4BhIZOZ.js';
-import { R as RegisterFormService, r as registerUser } from './registerService-fstnFxm8.js';
-import { u as usePasswordValidation } from './usePasswordValidation-BNEe5UB2.js';
-import { S as Swal } from './sweetalert2.all-BgYO93wr.js';
-import { F as Formik, a as Form } from './formik.esm-H811wbTi.js';
-import { c as create$3, a as create$6, b as create$9 } from './index.esm-t9Jx3sQ-.js';
+import { importShared } from './__federation_fn_import-Dhgpavzc.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-Bje5h6iL.js';
+import { V as VN, N as Ny, X as Xy, z as zd, q as qN, F as FN, S as S1 } from './ui-mathilde-web-DDewq026.js';
+import { R as RegisterFormService, r as registerUser } from './registerService-BXB2-OaD.js';
+import { u as usePasswordValidation } from './usePasswordValidation-t5wYo-tM.js';
+import { S as Swal } from './sweetalert2.esm.all-CcrGM5VA.js';
+import { c as create$3, a as create$6, d as create$9, F as Formik, b as Form } from './index.esm-C3AIIQzA.js';
+import { h } from './react-google-recaptcha-v3.esm-CNxFKMIh.js';
 
 const {useState,useRef} = await importShared('react');
 
@@ -58,7 +58,7 @@ const registerValidationSchema = create$3({
 });
 
 const {Link,useNavigate} = await importShared('react-router-dom');
-const RegisterForm = () => {
+const RegisterFormContent = () => {
   const { roles } = RegisterFormService;
   const navigate = useNavigate();
   const {
@@ -121,7 +121,7 @@ const RegisterForm = () => {
     setSubmitting(false);
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex w-full", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2/4 border-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx(p_, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2/4 border-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx(VN, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/4 flex items-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         Formik,
@@ -135,7 +135,7 @@ const RegisterForm = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/4 mr-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  gp,
+                  Ny,
                   {
                     type: "text",
                     placeholder: "Nombres",
@@ -150,7 +150,7 @@ const RegisterForm = () => {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/4 ml-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  gp,
+                  Ny,
                   {
                     type: "text",
                     placeholder: "Apellidos",
@@ -167,7 +167,7 @@ const RegisterForm = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/3 mr-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  gp,
+                  Ny,
                   {
                     type: "text",
                     placeholder: "Empresa",
@@ -182,7 +182,7 @@ const RegisterForm = () => {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/3 ml-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  gp,
+                  Ny,
                   {
                     type: "number",
                     placeholder: "Celular",
@@ -199,7 +199,7 @@ const RegisterForm = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/3 mr-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Mp,
+                  Xy,
                   {
                     name: "role",
                     options: roles,
@@ -212,7 +212,7 @@ const RegisterForm = () => {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/3 ml-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  gp,
+                  Ny,
                   {
                     type: "email",
                     name: "email",
@@ -229,7 +229,7 @@ const RegisterForm = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/3 mr-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  il,
+                  zd,
                   {
                     name: "password",
                     placeholder: "Contraseña",
@@ -243,7 +243,7 @@ const RegisterForm = () => {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-2/3 ml-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  il,
+                  zd,
                   {
                     name: "confirmPassword",
                     placeholder: "Confirmar contraseña",
@@ -258,7 +258,7 @@ const RegisterForm = () => {
             ] }),
             showError() && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mth-msg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("label", { children: "Las contraseñas no coinciden." }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex mt-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              m_,
+              qN,
               {
                 label: "Acepto los términos y condiciones de la plataforma y la política de privacidad.",
                 checked: termsAccepted,
@@ -269,7 +269,7 @@ const RegisterForm = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-end", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "mr-2 flex items-center", children: "Cancelar" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
-                s_,
+                FN,
                 {
                   txtBtn: "Continuar",
                   typeButton: "default",
@@ -284,7 +284,7 @@ const RegisterForm = () => {
           ] })
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(br, { isOpen: isModalOpen, onClose: toggleModal, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(S1, { isOpen: isModalOpen, onClose: toggleModal, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
@@ -510,7 +510,7 @@ const RegisterForm = () => {
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          s_,
+          FN,
           {
             txtBtn: "Acepto",
             typeButton: "default",
@@ -523,6 +523,21 @@ const RegisterForm = () => {
       ] })
     ] })
   ] });
+};
+const RegisterForm = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    h,
+    {
+      reCaptchaKey: "6LdCXC8rAAAAAL-Cg8XZHkdLSkwVc7Q2KOwvPfhq",
+      scriptProps: {
+        async: false,
+        defer: false,
+        appendTo: "head",
+        nonce: void 0
+      },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(RegisterFormContent, {})
+    }
+  );
 };
 
 export { RegisterForm as default };

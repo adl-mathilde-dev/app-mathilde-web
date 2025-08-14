@@ -1,5 +1,3 @@
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
@@ -42,4 +40,4 @@ react_production_min.useMemo=function(a,b){return U.current.useMemo(a,b)};react_
 var reactExports = react.exports;
 const index = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-export { commonjsGlobal as c, getDefaultExportFromCjs as g, index as i, reactExports as r };
+export { getDefaultExportFromCjs as g, index as i, reactExports as r };

@@ -1,17 +1,17 @@
-import { importShared } from './__federation_fn_import-BKb1h4mk.js';
-import { j as jsxRuntimeExports } from './jsx-runtime-CsM3lTE3.js';
-import { r as reactDomExports } from './index-CM0Mep8a.js';
-import { useAuth, AuthProvider } from './__federation_expose_AutenticationService-Dca20n4F.js';
-import CampaignForm from './__federation_expose_CampaignForm-BItUVzFV.js';
-import LoginForm from './__federation_expose_LoginForm-Bf1wv3q5.js';
-import RegisterForm from './__federation_expose_RegisterForm-CHd2a5uX.js';
-import ResetPass from './__federation_expose_ResetPass-DBvTAx7Q.js';
-import ValidationPass from './__federation_expose_ValidationPass-D9AosvU4.js';
-import Dashboard from './__federation_expose_Dashboard-BX6sBM06.js';
-import SettingsUser from './__federation_expose_SettingsUser-BMknvrC8.js';
-import thirdPartyCampaignForm, { F as FaMeta, S as SiGoogleads, a as FaTiktok$1 } from './__federation_expose_ThirdPartyCampaign-k7_xHQRI.js';
-import { S as SidebarMth, B as BsStack, a as FaTiktok } from './sidebar-pro-DCtabkHD.js';
-import { s as s_, g as g_, c as br, D as Ds, w as w_, v as v_, x as x_ } from './ui-mathilde-web-D4BhIZOZ.js';
+import { importShared } from './__federation_fn_import-Dhgpavzc.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-Bje5h6iL.js';
+import { r as reactDomExports } from './index-D9Af7wOI.js';
+import { u as useSelector, P as Provider_default, s as store, AuthProvider } from './__federation_expose_AutenticationService-Bb6x-Atq.js';
+import LoginForm from './__federation_expose_LoginForm-c5YO7aY6.js';
+import RegisterForm from './__federation_expose_RegisterForm-Dxebpfjg.js';
+import ResetPass from './__federation_expose_ResetPass-DUUH7gOC.js';
+import ValidationPass from './__federation_expose_ValidationPass-CYyoBpLf.js';
+import Dashboard from './__federation_expose_Dashboard-DENb3LMR.js';
+import SettingsUser from './__federation_expose_SettingsUser-ClYSLdnu.js';
+import ThirdPartyCampaignForm, { S as SiGoogleads } from './__federation_expose_ThirdPartyCampaign-CiGHuyn-.js';
+import { S as SidebarMth, B as BsStack, a as FaMeta, b as FaTiktok } from './sidebar-pro-BMBQQ8HL.js';
+import { F as FN, Y as YN, S as S1, u as u0, Q as QN, G as GN, K as KN } from './ui-mathilde-web-DDewq026.js';
+import Report from './__federation_expose_Report-qqpQvliI.js';
 
 true&&(function polyfill() {
   const relList = document.createElement("link").relList;
@@ -63,18 +63,19 @@ await importShared('react');
 
 const {Navigate} = await importShared('react-router-dom');
 const RouterLogueado = ({ children }) => {
-  const { user } = useAuth();
-  if (!user) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Navigate, { to: "/" });
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  return isAuthenticated ? children : /* @__PURE__ */ jsxRuntimeExports.jsx(Navigate, { to: "/", replace: true });
 };
 
 const tableColumns = [
   {
     header: "ESTADO",
     relation: "status",
-    isToggle: true
+    isToggle: true,
+    toggleText: {
+      active: "ACTIVA",
+      inactive: "PAUSA"
+    }
   },
   {
     header: "NOMBRE CAMPAÑAS",
@@ -105,8 +106,8 @@ const tableColumns = [
     relation: "impressions"
   },
   {
-    header: "CMP",
-    relation: "cmp"
+    header: "CPM",
+    relation: "cpm"
   },
   {
     header: "CLICS URL",
@@ -121,149 +122,56 @@ const tableColumns = [
     relation: "cpc"
   }
 ];
-const campaignData = [
-  {
-    status: false,
-    name: "CAMPAÑA_BDB_TC",
-    platform: "META",
-    startDate: "01/02/2025",
-    endDate: "30/03/2025",
-    budget: "$1.000.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_CLI",
-    platform: "META",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$720.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: false,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "GOOGLE",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "GOOGLE",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "META",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "TIKTOK",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "META",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "TIKTOK",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  },
-  {
-    status: true,
-    name: "CAMPAÑA_BDB_REFERIDOS",
-    platform: "META",
-    startDate: "10/02/2025",
-    endDate: "15/02/2025",
-    budget: "$480.000",
-    spent: "$500.000",
-    impressions: "100.000",
-    cmp: "10",
-    clicksUrl: "100",
-    ctr: "10",
-    cpc: "$10"
-  }
-];
 
 const React$2 = await importShared('react');
-const {useState: useState$1,useEffect} = React$2;
-const {Link,useNavigate: useNavigate$1,useLocation} = await importShared('react-router-dom');
-const summaryCampaign = () => {
-  useNavigate$1();
+const {useState: useState$1,useEffect: useEffect$1} = React$2;
+const {Link,useLocation} = await importShared('react-router-dom');
+const SummaryCampaign = () => {
   const location = useLocation();
   const [activeFilter, setActiveFilter] = useState$1("all");
   const [currentPage, setCurrentPage] = useState$1(1);
   const [isModalOpen, setIsModalOpen] = useState$1(false);
   const [localData, setLocalData] = useState$1([]);
-  useEffect(() => {
+  useEffect$1(() => {
+    let dataCampaign = sessionStorage.getItem("dataCampaign");
+    const allTransformedCampaigns = [];
+    function getRandomIntInRange(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    const transformMetaCampaign = (dataCampaign2) => ({
+      status: true,
+      name: dataCampaign2.name || "",
+      platform: dataCampaign2.platform || "",
+      startDate: dataCampaign2.start_date || "",
+      endDate: dataCampaign2.end_date || "",
+      budget: dataCampaign2.budget || "0",
+      spent: getRandomIntInRange(1, 99999),
+      impressions: getRandomIntInRange(1, 99999),
+      cpm: getRandomIntInRange(1, 99999),
+      clicksUrl: getRandomIntInRange(1, 99999),
+      ctr: getRandomIntInRange(1, 99999),
+      cpc: getRandomIntInRange(1, 99999)
+    });
+    if (dataCampaign) {
+      const parsedData = JSON.parse(dataCampaign);
+      const dataEnd = parsedData.body.campaigns;
+      for (let i = 0; i < 6; i++) {
+        allTransformedCampaigns.push(transformMetaCampaign(dataEnd[i]));
+      }
+    }
+    let initialData = [];
     const locationData = location.state;
-    const initialData = locationData?.campaignData || campaignData;
-    const dataWithIds = initialData.map((item, index) => ({
+    if (locationData?.campaignData) {
+      initialData = locationData.campaignData;
+      sessionStorage.setItem("campaignDataResumen", JSON.stringify(initialData));
+    } else {
+      const stored = sessionStorage.getItem("campaignDataResumen");
+      if (stored) {
+        initialData = JSON.parse(stored);
+      }
+    }
+    const combinedData = [...initialData, ...allTransformedCampaigns];
+    const dataWithIds = combinedData.map((item, index) => ({
       ...item,
       id: `${item.name}-${item.platform}-${index}`
     }));
@@ -287,11 +195,18 @@ const summaryCampaign = () => {
       oldValue: row[columnKey],
       newValue: checked
     });
-    setLocalData(
-      (prev) => prev.map(
+    setLocalData((prev) => {
+      const updated = prev.map(
         (item) => item.id === rowId ? { ...item, [columnKey]: checked } : item
-      )
-    );
+      );
+      sessionStorage.setItem("campaignDataResumen", JSON.stringify(updated));
+      return updated;
+    });
+  };
+  const formatUSD = (value) => {
+    const num = Number(String(value).replace(/[^0-9]/g, ""));
+    if (isNaN(num)) return value;
+    return num.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0 });
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen w-full flex", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SidebarMth, {}),
@@ -303,7 +218,7 @@ const summaryCampaign = () => {
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
-            s_,
+            FN,
             {
               txtBtn: "CREAR CAMPAÑA",
               typeButton: "default",
@@ -353,41 +268,48 @@ const summaryCampaign = () => {
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        g_,
+        YN,
         {
           showSearch: true,
-          itemsPerPage: 4,
+          itemsPerPage: 20,
           columns: tableColumns,
-          data: getFilteredData(),
+          data: getFilteredData().map((item) => ({
+            ...item,
+            budget: formatUSD(item.budget) + " USD"
+          })),
           onToggleChange: handleToggleChange
         },
         `${activeFilter}-table`
       ) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(br, { width: "40%", isOpen: isModalOpen, onClose: toggleModal, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col px-10 pb-5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(S1, { width: "40%", isOpen: isModalOpen, onClose: toggleModal, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col px-10 pb-5", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-center font-bold mb-3", children: "SELECCIONA UNA OPCIÓN PARA CREAR TU CAMPAÑA" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/thirdPartyCampaign", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Ds, { image: { "type": "image", "name": "window" }, title: "Campañas manuales", description: "" }) }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/massiveCampaign", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Ds, { image: { "type": "image", "name": "robot" }, title: "Campañas masivas", description: "" }) }) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/thirdPartyCampaign", children: /* @__PURE__ */ jsxRuntimeExports.jsx(u0, { imageUrl: "https://ftp.mathilde-ads.com/151-605f91d40859d5d52379b6753401b68f.svg", title: "Campañas manuales", description: "" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/massiveCampaign", children: /* @__PURE__ */ jsxRuntimeExports.jsx(u0, { imageUrl: "https://ftp.mathilde-ads.com/151-d41c45a31a82b5e2519657b41a04ae94.svg", title: "Campañas masivas", description: "" }) }) })
       ] })
     ] }) })
   ] });
 };
 
 const React$1 = await importShared('react');
-const {useState} = React$1;
+const {useState,useEffect} = React$1;
 
 const {useNavigate} = await importShared('react-router-dom');
-const massiveCampaigns = () => {
+const MassiveCampaigns = () => {
   const [files, setFiles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [campaignData, setCampaignData] = useState(null);
   const navigate = useNavigate();
-  const handleFileChange = (event) => {
-    if (event.target.files) {
-      const selectedFiles = Array.from(event.target.files);
-      setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+  useEffect(() => {
+    const stored = sessionStorage.getItem("Campaign");
+    if (stored) {
+      setCampaignData(JSON.parse(stored));
     }
+  }, []);
+  const handleFileChange = (files2) => {
+    setFiles((prevFiles) => [...prevFiles, ...files2]);
   };
   const handleDeleteFile = (fileToDelete) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file !== fileToDelete));
@@ -449,7 +371,36 @@ const massiveCampaigns = () => {
       console.warn("El número de tipos no coincide con el número de campos");
       throw new Error("El formato del archivo no es válido");
     }
-    const campaignData = [];
+    const isGoogle = rows[2][0]?.toLowerCase().includes("google");
+    if (isGoogle) {
+      const googleCampaigns = [];
+      const googleAdSets = [];
+      const googleAds = [];
+      for (let i = 2; i < rows.length; i++) {
+        const values = rows[i];
+        const campaignObj = {};
+        const adSetObj = {};
+        const adObj = {};
+        fields.forEach((field, idx) => {
+          const type = types[idx];
+          const value = values[idx];
+          if (!field) return;
+          if (type === "campaign") {
+            campaignObj[field] = value;
+          } else if (type === "ad set") {
+            adSetObj[field] = value;
+          } else if (type === "ads") {
+            adObj[field] = value;
+          }
+        });
+        if (Object.keys(campaignObj).length > 0) googleCampaigns.push(campaignObj);
+        if (Object.keys(adSetObj).length > 0) googleAdSets.push(adSetObj);
+        if (Object.keys(adObj).length > 0) googleAds.push(adObj);
+      }
+      console.log("Datos procesados:", { campaignData: googleCampaigns, adSetData: googleAdSets, adData: googleAds });
+      return { campaignData: googleCampaigns, adSetData: googleAdSets, adData: googleAds };
+    }
+    const campaignData2 = [];
     const adSetData = [];
     const adData = [];
     for (let i = 2; i < rows.length; i++) {
@@ -473,6 +424,9 @@ const massiveCampaigns = () => {
           if (targetType === "campaign") {
             campaignObj[mappedField] = value;
           } else if (targetType === "ad set") {
+            if (["start_time", "end_time"].includes(mappedField)) {
+              adSetObj[mappedField + "_original"] = value;
+            }
             if (["budget", "spend_limit_max", "spend_limit_min"].includes(mappedField)) {
               adSetObj[mappedField] = parseFloat(value.replace(/[^0-9.-]+/g, "")) || 0;
             } else if (["start_time", "end_time"].includes(mappedField)) {
@@ -514,7 +468,7 @@ const massiveCampaigns = () => {
       });
       if (hasRequiredCampaignFields) {
         console.log("Agregando Campaign:", campaignObj);
-        campaignData.push(campaignObj);
+        campaignData2.push(campaignObj);
       }
       if (hasRequiredAdSetFields) {
         console.log("Agregando AdSet:", adSetObj);
@@ -525,30 +479,71 @@ const massiveCampaigns = () => {
         adData.push(adObj);
       }
     }
-    console.log("Datos procesados:", { campaignData, adSetData, adData });
-    return { campaignData, adSetData, adData };
+    console.log("Datos procesados:", { campaignData: campaignData2, adSetData, adData });
+    const Campaign = { campaignData: campaignData2, adSetData, adData };
+    setCampaignData(Campaign);
+    return { campaignData: campaignData2, adSetData, adData };
   };
+  const transformMetaCampaign = (campaign, adSet) => ({
+    status: typeof campaign.status === "string" && campaign.status.trim().toUpperCase() === "ACTIVE" ? true : false,
+    name: campaign.name,
+    platform: "META",
+    startDate: adSet?.start_time_original || adSet?.start_time || "",
+    endDate: adSet?.end_time_original || adSet?.end_time || "",
+    budget: adSet?.budget?.toString() || "0",
+    spent: "0",
+    impressions: "0",
+    cpm: "0",
+    clicksUrl: "0",
+    ctr: "0",
+    cpc: "0"
+  });
+  const transformGoogleCampaign = (row) => ({
+    status: typeof row.status === "string" && row.status.trim().toUpperCase() === "ACTIVE" ? true : false,
+    name: row.name || row.campaign_name || "",
+    platform: "GOOGLE",
+    startDate: row["start date"] || "",
+    endDate: row["end date"] || "",
+    budget: row["budget"]?.toString() || "0",
+    spent: "0",
+    impressions: "0",
+    cpm: "0",
+    clicksUrl: "0",
+    ctr: "0",
+    cpc: "0"
+  });
   const handleSendFiles = async () => {
     if (files.length === 0) return;
     setIsLoading(true);
     setError(false);
     try {
-      const file = files[0];
-      console.log("Archivo seleccionado:", file.name);
-      const text = await file.text();
-      console.log("Contenido del archivo:", text.substring(0, 200) + "...");
-      const { campaignData: campaigns, adSetData: adSets, adData: ads } = processCSVData(text);
-      if (campaigns.length === 0 && adSets.length === 0 && ads.length === 0) {
-        throw new Error("No se encontraron datos válidos en el archivo");
+      const allTransformedCampaigns = [];
+      for (const file of files) {
+        await new Promise((resolve) => setTimeout(resolve, 1e3));
+        const text = await file.text();
+        const { campaignData: campaigns, adSetData: adSets, adData: ads } = processCSVData(text);
+        if (campaigns.length === 0 && adSets.length === 0 && ads.length === 0) {
+          continue;
+        }
+        const platform = (campaigns[0] && (campaigns[0]["platform"] || campaigns[0]["Platform"]) || "").trim().toUpperCase();
+        if (platform === "META") {
+          for (let i = 0; i < campaigns.length; i++) {
+            allTransformedCampaigns.push(transformMetaCampaign(campaigns[i], adSets[i]));
+          }
+        } else if (platform === "GOOGLE") {
+          for (const campaign of campaigns) {
+            allTransformedCampaigns.push(transformGoogleCampaign(campaign));
+          }
+        }
       }
-      const formattedData = {
-        campaign: campaigns,
-        ad_set: adSets,
-        ads
-      };
-      console.log("Datos formateados para navegación:", formattedData);
+      if (allTransformedCampaigns.length === 0) {
+        throw new Error("No se encontraron datos válidos en los archivos");
+      }
+      sessionStorage.setItem("campaignDataResumen", JSON.stringify(allTransformedCampaigns));
+      await new Promise((resolve) => setTimeout(resolve, 1e3));
+      console.log("Datos transformados:", allTransformedCampaigns);
       navigate("/summaryCampaign", {
-        state: { campaignData: formattedData }
+        state: { campaignData: allTransformedCampaigns }
       });
     } catch (error2) {
       console.error("Error completo:", error2);
@@ -557,114 +552,126 @@ const massiveCampaigns = () => {
       setIsLoading(false);
     }
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: isLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen w-full flex items-center justify-center bg-white", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(w_, { description: "Estamos trabajando en la <br><strong>creación de tus campañas</strong>" }) }) }) : error ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen w-full flex items-center justify-center bg-white", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center justify-center bg-white text-center", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl mb-4", children: "Error al procesar el archivo" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      s_,
-      {
-        txtBtn: "Volver a intentar",
-        typeButton: "default",
-        full: false,
-        type: "button",
-        onClick: () => {
-          setError(false);
-          setFiles([]);
+  const handleDownloadTemplate = (platform) => {
+    const fileUrl = platform === "meta" ? "https://d1h7f3ppz16fle.cloudfront.net/RecursosMathilde/Mathilde-web/files/meta_campaign_template.csv" : platform === "google" ? "https://d1h7f3ppz16fle.cloudfront.net/RecursosMathilde/Mathilde-web/files/google_campaign_template.csv" : "tiktok_campaign_template.csv";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileUrl.split("/").pop() || "template.csv";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    isLoading && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 min-h-screen w-full flex items-center justify-center bg-white bg-opacity-75", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(QN, { description: "Estamos trabajando en la <br><strong>creación de tus campañas</strong>" }) }) }),
+    error ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen w-full flex items-center justify-center bg-white", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center justify-center bg-white text-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl mb-4", children: "Error al procesar el archivo" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FN,
+        {
+          txtBtn: "Volver a intentar",
+          typeButton: "default",
+          full: false,
+          type: "button",
+          onClick: () => {
+            setError(false);
+            setFiles([]);
+          }
         }
-      }
-    )
-  ] }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen w-full flex", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SidebarMth, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen w-full container-space", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "w-2/3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "block", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "font-bold", style: { marginBottom: "0px !important" }, children: "CREACIÓN DE CAMPAÑAS" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-normal mb-4", children: "MEDIOS PAGOS" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold mb-4", children: "CREAR CAMPAÑAS DE FORMA MASIVA EN LAS DIFERENTES PLATAFORMAS" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(v_, { accept: "text/csv", multiple: true, onChange: handleFileChange }) })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col mb-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4", children: "DESCARGA LAS PLANTILLAS DEL FEED DE DATOS" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            s_,
-            {
-              txtBtn: "Plantilla Meta",
-              leftIcon: FaMeta,
-              typeButton: "border",
-              full: false,
-              type: "button",
-              disabled: false
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            s_,
-            {
-              txtBtn: "Plantilla Google",
-              leftIcon: SiGoogleads,
-              typeButton: "border",
-              full: false,
-              type: "button",
-              disabled: false
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            s_,
-            {
-              txtBtn: "Plantilla Tiktok",
-              leftIcon: FaTiktok$1,
-              typeButton: "border",
-              full: false,
-              type: "button",
-              disabled: false
-            }
-          )
+      )
+    ] }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen w-full flex", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SidebarMth, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen w-full container-space", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "w-2/3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "block", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "font-bold", style: { marginBottom: "0px !important" }, children: "CREACIÓN DE CAMPAÑAS" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-normal mb-4", children: "MEDIOS PAGOS" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold mb-4", children: "CREAR CAMPAÑAS DE FORMA MASIVA EN LAS DIFERENTES PLATAFORMAS" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(GN, { accept: "text/csv", multiple: true, onChange: handleFileChange }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col mb-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4", children: "DESCARGA LAS PLANTILLAS DEL FEED DE DATOS" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              FN,
+              {
+                txtBtn: "Plantilla Meta",
+                leftIcon: FaMeta,
+                typeButton: "border",
+                full: false,
+                type: "button",
+                disabled: false,
+                onClick: () => handleDownloadTemplate("meta")
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              FN,
+              {
+                txtBtn: "Plantilla Google",
+                leftIcon: SiGoogleads,
+                typeButton: "border",
+                full: false,
+                type: "button",
+                disabled: false,
+                onClick: () => handleDownloadTemplate("google")
+              }
+            )
+          ] })
+        ] }),
+        files.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 w-full items-center justify-end", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FN,
+          {
+            txtBtn: "Regresar",
+            typeButton: "border",
+            full: false,
+            type: "button",
+            onClick: () => navigate("/summaryCampaign")
+          }
+        ) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "my-4 font-bold", children: "ARCHIVOS CARGADOS " }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(KN, { files, onDelete: handleDeleteFile }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 w-full items-center justify-end", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              FN,
+              {
+                txtBtn: "Cancelar",
+                typeButton: "border",
+                full: false,
+                type: "button",
+                onClick: () => setFiles([])
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              FN,
+              {
+                txtBtn: "Siguiente",
+                typeButton: "default",
+                full: false,
+                type: "button",
+                onClick: handleSendFiles
+              }
+            )
+          ] })
         ] })
-      ] }),
-      files.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col mb-4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "my-4 font-bold", children: "ARCHIVOS CARGADOS " }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(x_, { files, onDelete: handleDeleteFile }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 w-full items-center justify-end", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            s_,
-            {
-              txtBtn: "Cancelar",
-              typeButton: "border",
-              full: false,
-              type: "button",
-              onClick: () => setFiles([])
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            s_,
-            {
-              txtBtn: "Siguiente",
-              typeButton: "default",
-              full: false,
-              type: "button",
-              onClick: handleSendFiles
-            }
-          )
-        ] })
-      ] })
-    ] }) })
-  ] }) });
+      ] }) })
+    ] })
+  ] });
 };
 
 const {lazy,Suspense} = await importShared('react');
 
 const {Routes,Route} = await importShared('react-router-dom');
 const App = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Suspense, { fallback: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Routes, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Suspense, { fallback: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Routes, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/", element: /* @__PURE__ */ jsxRuntimeExports.jsx(LoginForm, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/register", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RegisterForm, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/reset", element: /* @__PURE__ */ jsxRuntimeExports.jsx(ResetPass, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/form-social", element: /* @__PURE__ */ jsxRuntimeExports.jsx(CampaignForm, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/validation", element: /* @__PURE__ */ jsxRuntimeExports.jsx(ValidationPass, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/dashboard", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Dashboard, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/settings", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(SettingsUser, {}) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/thirdPartyCampaign", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(thirdPartyCampaignForm, {}) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/summaryCampaign", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(summaryCampaign, {}) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/massiveCampaign", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(massiveCampaigns, {}) }) })
-  ] }) }) });
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/thirdPartyCampaign", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ThirdPartyCampaignForm, {}) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/summaryCampaign", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(SummaryCampaign, {}) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/massiveCampaign", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MassiveCampaigns, {}) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/report", element: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterLogueado, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Report, {}) }) })
+  ] }) }) }) });
 };
 
 const React = await importShared('react');

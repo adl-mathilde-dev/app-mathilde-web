@@ -1,11 +1,10 @@
-import { importShared } from './__federation_fn_import-BKb1h4mk.js';
-import { j as jsxRuntimeExports } from './jsx-runtime-CsM3lTE3.js';
-import { a as gp, M as Mp, s as s_, i as il, b as b_ } from './ui-mathilde-web-D4BhIZOZ.js';
-import { S as SidebarMth } from './sidebar-pro-DCtabkHD.js';
-import { R as RegisterFormService } from './registerService-fstnFxm8.js';
-import { u as usePasswordValidation } from './usePasswordValidation-BNEe5UB2.js';
-import { F as Formik, a as Form } from './formik.esm-H811wbTi.js';
-import { c as create$3, d as create$5, a as create$6, b as create$9 } from './index.esm-t9Jx3sQ-.js';
+import { importShared } from './__federation_fn_import-Dhgpavzc.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-Bje5h6iL.js';
+import { N as Ny, X as Xy, F as FN, z as zd, U as UN } from './ui-mathilde-web-DDewq026.js';
+import { S as SidebarMth } from './sidebar-pro-BMBQQ8HL.js';
+import { R as RegisterFormService } from './registerService-BXB2-OaD.js';
+import { u as usePasswordValidation } from './usePasswordValidation-t5wYo-tM.js';
+import { c as create$3, e as create$5, a as create$6, d as create$9, F as Formik, b as Form } from './index.esm-C3AIIQzA.js';
 
 const updateUserSchema = create$3().shape({
   name: create$6().required("El nombre es obligatorio").min(2, "El nombre debe tener al menos 2 caracteres"),
@@ -81,7 +80,7 @@ const SettingsUser = () => {
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-1/5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mt-6", children: "INFORMACIÓN BÁSICA" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    gp,
+                    Ny,
                     {
                       type: "text",
                       placeholder: "Nombres",
@@ -94,7 +93,7 @@ const SettingsUser = () => {
                   ),
                   formik.errors.name && formik.touched.name && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-red-500 text-sm my-2", children: formik.errors.name }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    gp,
+                    Ny,
                     {
                       type: "text",
                       placeholder: "Apellidos",
@@ -107,7 +106,7 @@ const SettingsUser = () => {
                   ),
                   formik.errors.firtsName && formik.touched.firtsName && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-red-500 text-sm my-2", children: formik.errors.firtsName }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    gp,
+                    Ny,
                     {
                       type: "text",
                       placeholder: "Empresa",
@@ -120,7 +119,7 @@ const SettingsUser = () => {
                   ),
                   formik.errors.company && formik.touched.company && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-red-500 text-sm my-2", children: formik.errors.company }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Mp,
+                    Xy,
                     {
                       options: roles,
                       value: formik.values.role,
@@ -133,7 +132,7 @@ const SettingsUser = () => {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1/5 flex flex-col justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mt-6", children: "INFORMACIÓN CUENTA" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    gp,
+                    Ny,
                     {
                       type: "email",
                       value: formik.values.email,
@@ -146,7 +145,7 @@ const SettingsUser = () => {
                   formik.errors.email && formik.touched.email && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-red-500 text-sm my-2", children: formik.errors.email }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mt-6", children: "INFORMACIÓN DE CONTACTO" }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    gp,
+                    Ny,
                     {
                       type: "number",
                       placeholder: "Celular",
@@ -166,7 +165,7 @@ const SettingsUser = () => {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1/5" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 w-full items-center justify-end", children: isEditing ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    s_,
+                    FN,
                     {
                       txtBtn: "Cancelar",
                       typeButton: "border",
@@ -179,7 +178,7 @@ const SettingsUser = () => {
                     }
                   ),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    s_,
+                    FN,
                     {
                       txtBtn: "Guardar",
                       typeButton: "default",
@@ -189,7 +188,7 @@ const SettingsUser = () => {
                     }
                   )
                 ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  s_,
+                  FN,
                   {
                     txtBtn: "Editar",
                     typeButton: "default",
@@ -217,7 +216,7 @@ const SettingsUser = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-5", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-1/5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    il,
+                    zd,
                     {
                       name: "currentPassword",
                       placeholder: "Contraseña actual",
@@ -229,7 +228,7 @@ const SettingsUser = () => {
                   ),
                   formikProps.errors.currentPassword && formikProps.touched.currentPassword && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-red-500 text-sm my-2", children: String(formikProps.errors.currentPassword) }),
                   !isVisible && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 w-full items-center justify-end", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    s_,
+                    FN,
                     {
                       txtBtn: "Actualizar",
                       typeButton: "default",
@@ -243,10 +242,10 @@ const SettingsUser = () => {
                   ) })
                 ] }),
                 isVisible && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-1/5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(b_, { formik: formikProps }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(UN, { formik: formikProps }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 w-full items-center justify-end", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      s_,
+                      FN,
                       {
                         txtBtn: "Cancelar",
                         typeButton: "border",
@@ -260,7 +259,7 @@ const SettingsUser = () => {
                       }
                     ),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      s_,
+                      FN,
                       {
                         txtBtn: "Guardar",
                         typeButton: "default",

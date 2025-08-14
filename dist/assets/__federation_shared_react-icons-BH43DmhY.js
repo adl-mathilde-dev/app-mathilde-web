@@ -1,4 +1,4 @@
-export { D as DefaultContext, G as GenIcon, I as IconBase, a as IconContext } from './iconBase-CzVYbf2Q.js';
+export { D as DefaultContext, G as GenIcon, I as IconBase, a as IconContext } from './iconBase-CXv6bwSs.js';
 
 var IconsManifest = [
   {

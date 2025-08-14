@@ -1,4 +1,4 @@
-import { importShared } from './__federation_fn_import-BKb1h4mk.js';
+import { importShared } from './__federation_fn_import-Dhgpavzc.js';
 
 const {useState,useEffect} = await importShared('react');
 

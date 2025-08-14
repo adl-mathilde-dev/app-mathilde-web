@@ -1,8 +1,8 @@
-import { importShared } from './__federation_fn_import-BKb1h4mk.js';
-import { j as jsxRuntimeExports } from './jsx-runtime-CsM3lTE3.js';
-import { T as Tn, c as br, D as Ds } from './ui-mathilde-web-D4BhIZOZ.js';
-import { useAuth } from './__federation_expose_AutenticationService-Dca20n4F.js';
-import { G as GenIcon } from './iconBase-CzVYbf2Q.js';
+import { importShared } from './__federation_fn_import-Dhgpavzc.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-Bje5h6iL.js';
+import { C as Cn, S as S1, u as u0 } from './ui-mathilde-web-DDewq026.js';
+import { useAuth } from './__federation_expose_AutenticationService-Bb6x-Atq.js';
+import { G as GenIcon } from './iconBase-CXv6bwSs.js';
 
 const React = await importShared('react');
 
@@ -3462,12 +3462,18 @@ function IoIosExit (props) {
   return GenIcon({"attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M144 136v107h179.9l-47.2-47.9c-5-5.1-5-13.3.1-18.4 5.1-5 13.3-5 18.4.1l69 70c2.4 2.5 3.7 5.8 3.7 9.1 0 1.7-.3 3.4-1 5-.6 1.5-1.6 2.9-2.7 4.1l-69 70c-5 5.1-13.3 5.2-18.4.1-5.1-5-5.2-13.3-.1-18.4l47.2-47.9H144v107c0 22 18 40 40 40h240c22 0 40-18 40-40V136c0-22-18-40-40-40H184c-22 0-40 18-40 40zM61 243c-7.2 0-13 5.8-13 13s5.8 13 13 13h83v-26H61z"},"child":[]}]})(props);
 }
 
+// THIS FILE IS AUTO GENERATED
+function FaMeta (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 640 512"},"child":[{"tag":"path","attr":{"d":"M640 317.9C640 409.2 600.6 466.4 529.7 466.4C467.1 466.4 433.9 431.8 372.8 329.8L341.4 277.2C333.1 264.7 326.9 253 320.2 242.2C300.1 276 273.1 325.2 273.1 325.2C206.1 441.8 168.5 466.4 116.2 466.4C43.42 466.4 0 409.1 0 320.5C0 177.5 79.78 42.4 183.9 42.4C234.1 42.4 277.7 67.08 328.7 131.9C365.8 81.8 406.8 42.4 459.3 42.4C558.4 42.4 640 168.1 640 317.9H640zM287.4 192.2C244.5 130.1 216.5 111.7 183 111.7C121.1 111.7 69.22 217.8 69.22 321.7C69.22 370.2 87.7 397.4 118.8 397.4C149 397.4 167.8 378.4 222 293.6C222 293.6 246.7 254.5 287.4 192.2V192.2zM531.2 397.4C563.4 397.4 578.1 369.9 578.1 322.5C578.1 198.3 523.8 97.08 454.9 97.08C421.7 97.08 393.8 123 360 175.1C369.4 188.9 379.1 204.1 389.3 220.5L426.8 282.9C485.5 377 500.3 397.4 531.2 397.4L531.2 397.4z"},"child":[]}]})(props);
+}function FaRobot (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 640 512"},"child":[{"tag":"path","attr":{"d":"M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z"},"child":[]}]})(props);
+}
+
 const {useState} = await importShared('react');
 const {Link} = await importShared('react-router-dom');
 const {useNavigate} = await importShared('react-router-dom');
-
 const SidebarMth = () => {
-  const { logout } = useAuth();
+  const { handleLogout } = useAuth();
   const [collapsed, setCollapsed] = useState(true);
   const [activeModal, setActiveModal] = useState(null);
   const navigate = useNavigate();
@@ -3499,7 +3505,7 @@ const SidebarMth = () => {
           }
         },
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5 mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/dashboard", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Tn, { classIm: "mx-3", src: "https://ftp.mathilde-ads.com/151-5f18f5b0ce0f79b3c7e3ffbd4828ec14.png", alt: "Logo Mathilde ads", width: 58, height: 58 }) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5 mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/dashboard", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Cn, { classIm: "mx-3", src: "https://ftp.mathilde-ads.com/151-5f18f5b0ce0f79b3c7e3ffbd4828ec14.png", alt: "Logo Mathilde ads", width: 58, height: 58 }) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(Menu, { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               MenuItem,
@@ -3523,8 +3529,39 @@ const SidebarMth = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               MenuItem,
               {
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FaRobot, { className: "text-xl" }),
+                onClick: () => {
+                  const link = document.createElement("a");
+                  link.href = "https://pruebasmathilde.com/chatbot-frontend/";
+                  link.target = "_blank";
+                  link.rel = "noopener noreferrer";
+                  link.click();
+                },
+                className: "bg-white my-1 mb-2 mx-3 rounded-md hover:bg-opacity-90",
+                rootStyles: {
+                  button: {
+                    width: collapsed ? "calc(100% - 0.5rem)" : "calc(100% - 1rem)",
+                    margin: collapsed ? "0 0.25rem" : "0 0.5rem",
+                    color: "#483FFF",
+                    "&:hover": {
+                      color: "#483FFF"
+                    }
+                  }
+                },
+                children: "Asistente IA"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              MenuItem,
+              {
                 icon: /* @__PURE__ */ jsxRuntimeExports.jsx(BsFillBoxSeamFill, { className: "text-xl" }),
-                onClick: () => window.open("https://ssp.mathilde-ads.com/login", "_blank"),
+                onClick: () => {
+                  const link = document.createElement("a");
+                  link.href = "https://ssp.mathilde-ads.com/login";
+                  link.target = "_blank";
+                  link.rel = "noopener noreferrer";
+                  link.click();
+                },
                 className: "bg-white my-1 mb-2 mx-3 rounded-md hover:bg-opacity-90",
                 rootStyles: {
                   button: {
@@ -3543,7 +3580,13 @@ const SidebarMth = () => {
               MenuItem,
               {
                 icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FaUsers, { className: "text-xl" }),
-                onClick: () => window.open("https://dsp.mathilde-ads.com/login", "_blank"),
+                onClick: () => {
+                  const link = document.createElement("a");
+                  link.href = "https://dsp.mathilde-ads.com/login";
+                  link.target = "_blank";
+                  link.rel = "noopener noreferrer";
+                  link.click();
+                },
                 className: "bg-white my-1 mb-2 mx-3 rounded-md hover:bg-opacity-90",
                 rootStyles: {
                   button: {
@@ -3558,16 +3601,25 @@ const SidebarMth = () => {
                 children: " Audiencias "
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(MenuItem, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(AiFillPieChart, { className: "text-xl" }), onClick: () => handleModalToggle("reportes"), className: "bg-white my-1 mb-2 mx-3 rounded-md hover:bg-opacity-90", rootStyles: {
-              button: {
-                width: collapsed ? "calc(100% - 0.5rem)" : "calc(100% - 1rem)",
-                margin: collapsed ? "0 0.25rem" : "0 0.5rem",
-                color: "#483FFF",
-                "&:hover": {
-                  color: "#483FFF"
-                }
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              MenuItem,
+              {
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(AiFillPieChart, { className: "text-xl" }),
+                onClick: () => navigate("/report"),
+                className: "bg-white my-1 mb-2 mx-3 rounded-md hover:bg-opacity-90",
+                rootStyles: {
+                  button: {
+                    width: collapsed ? "calc(100% - 0.5rem)" : "calc(100% - 1rem)",
+                    margin: collapsed ? "0 0.25rem" : "0 0.5rem",
+                    color: "#483FFF",
+                    "&:hover": {
+                      color: "#483FFF"
+                    }
+                  }
+                },
+                children: " Reportes "
               }
-            }, children: " Reportes " }),
+            ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               MenuItem,
               {
@@ -3588,20 +3640,18 @@ const SidebarMth = () => {
               }
             )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-auto self-end p-4 w-full cursor-pointer", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center bg-white rounded-md p-2", onClick: logout, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-3xl", style: { color: "#483FFF" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IoIosExit, {}) }) }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-auto self-end p-4 w-full cursor-pointer", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center bg-white rounded-md p-2", onClick: handleLogout, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-3xl", style: { color: "#483FFF" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IoIosExit, {}) }) }) })
         ]
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(br, { width: "40%", isOpen: activeModal === "campanas", onClose: () => setActiveModal(null), children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col px-10 pb-5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(S1, { width: "40%", isOpen: activeModal === "campanas", onClose: () => setActiveModal(null), children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col px-10 pb-5", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-center font-bold mb-3", children: "Selecciona el tipo de campaña que quieres crear" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", onClick: () => window.open("https://dsp.mathilde-ads.com/login", "_blank"), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Ds, { image: { "type": "image", "name": "medios-propios" }, title: "Medios Propios", description: "Crea y administra campañas a los usuarios que ingresan a tus canales." }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/summaryCampaign", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Ds, { image: { "type": "image", "name": "medios-pagos" }, title: "Medios Pagos", description: "Activa campañas de Marketing Digital usando inventario de Redes Sociales y Google." }) }) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", onClick: () => window.open("https://dsp.mathilde-ads.com/login", "_blank"), children: /* @__PURE__ */ jsxRuntimeExports.jsx(u0, { imageUrl: "https://ftp.mathilde-ads.com/151-ace94cf43477f7394e72ff6819cc621a.svg", title: "Medios Propios", description: "Crea y administra campañas a los usuarios que ingresan a tus canales." }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3/6 p-2 flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/summaryCampaign", onClick: () => setActiveModal(null), children: /* @__PURE__ */ jsxRuntimeExports.jsx(u0, { imageUrl: "https://ftp.mathilde-ads.com/151-1625a87e98d0195b779465fd1e699481.svg", title: "Medios Pagos", description: "Activa campañas de Marketing Digital usando inventario de Redes Sociales y Google." }) }) })
       ] })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(br, { isOpen: activeModal === "audiencias", onClose: () => setActiveModal(null), children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Audiencias" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(br, { isOpen: activeModal === "reportes", onClose: () => setActiveModal(null), children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Reportes" }) })
+    ] }) })
   ] }) });
 };
 
-export { BsStack as B, FaFacebook as F, IoMegaphone as I, SidebarMth as S, FaTiktok as a };
+export { BsStack as B, FaFacebook as F, IoMegaphone as I, SidebarMth as S, FaMeta as a, FaTiktok as b };

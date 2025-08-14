@@ -1,5 +1,5 @@
 # Etapa de construcción
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -7,8 +7,8 @@ WORKDIR /app
 # Copiar archivos de dependencias primero (para mejor cache)
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm ci --only=production && npm cache clean --force
+# Instalar todas las dependencias (incluyendo devDependencies para el build)
+RUN npm ci && npm cache clean --force
 
 # Copiar todo el código fuente
 COPY . .
@@ -28,11 +28,7 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Copiar configuración de nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Crear usuario no-root para seguridad
-RUN addgroup -g 1001 -S nginx && \
-    adduser -S -D -H -u 1001 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx
-
-# Cambiar permisos
+# Cambiar permisos (nginx:alpine ya tiene el usuario nginx)
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
     chmod -R 755 /usr/share/nginx/html
 
