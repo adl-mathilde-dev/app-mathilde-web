@@ -4,20 +4,20 @@ FROM node:18-alpine
 # Establecer directorio de trabajo
 WORKDIR /app
 
-# Instalar dependencias del sistema
-RUN apk add --no-cache git
+# Instalar dependencias globales útiles para desarrollo
+RUN npm install -g npm@latest
 
-# Copiar archivos de configuración
+# Copiar archivos de dependencias
 COPY package*.json ./
 
-# Instalar dependencias
+# Instalar todas las dependencias (incluyendo devDependencies)
 RUN npm install
 
 # Copiar código fuente
 COPY . .
 
-# Exponer puerto
-EXPOSE 5173
+# Exponer puerto de desarrollo
+EXPOSE 5174
 
-# Comando por defecto
-CMD ["npm", "run", "dev"]
+# Comando por defecto para desarrollo
+CMD ["npm", "run", "dev"] 

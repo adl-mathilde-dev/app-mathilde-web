@@ -1,34 +1,25 @@
-# Dockerfile para App Mathilde Web
-# Multi-stage build para optimizar el tamaño de la imagen
-
-# Etapa 1: Build
+# Etapa de construcción
 FROM node:18-alpine AS builder
 
 # Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar archivos de configuración
+# Copiar archivos de dependencias
 COPY package*.json ./
-COPY tsconfig.json ./
-COPY tailwind.config.ts ./
-COPY vite.config*.ts ./
 
-# Instalar dependencias
-RUN npm ci --only=production
+# Instalar todas las dependencias (incluyendo devDependencies para el build)
+RUN npm ci
 
 # Copiar código fuente
 COPY . .
 
-# Ejecutar build
+# Construir la aplicación
 RUN npm run build
 
-# Etapa 2: Servidor de producción
-FROM nginx:alpine AS production
+# Etapa de producción
+FROM nginx:alpine
 
-# Copiar configuración personalizada de nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Copiar archivos de build
+# Copiar archivos construidos desde la etapa anterior
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Exponer puerto
