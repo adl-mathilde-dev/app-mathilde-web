@@ -16,8 +16,8 @@ build
 .gitignore
 .gitattributes
 
-# Archivos de entorno
-.env
+# Archivos de entorno (permitir .env para el contenedor)
+# .env
 .env.local
 .env.development.local
 .env.test.local

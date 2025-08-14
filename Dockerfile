@@ -34,7 +34,7 @@ COPY --from=builder /app/tsconfig.json /app/
 COPY --from=builder /app/vite.config.ts /app/
 COPY --from=builder /app/tailwind.config.ts /app/
 
-# Copiar archivo .env en ambas ubicaciones
+# Copiar archivo .env directamente
 COPY --from=builder /app/.env /app/.env
 COPY --from=builder /app/.env /.env
 
