@@ -1,26 +1,40 @@
-version: '3.8'
 services:
   web:
-    container_name: app-mathilde-web
-    build:
-      context: .
-      dockerfile: Dockerfile
+    container_name: app-mathilde-web-prod
+    build: .
     ports:
-      - "80:80"
+      - "8080:80"
     environment:
       NODE_ENV: production
+      # Puerto del servidor
       PORT: 80
       HOSTNAME: 0.0.0.0
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
     networks:
-      - app-network
+      - dokploy-network
+
+  # Servicio de desarrollo (opcional)
+  web-dev:
+    container_name: app-mathilde-web-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    environment:
+      NODE_ENV: development
+      # Puerto del servidor de desarrollo
+      PORT: 5173
+      HOSTNAME: 0.0.0.0
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run start
+    profiles:
+      - dev
+    networks:
+      - dokploy-network
 
 networks:
-  app-network:
-    driver: bridge
+  dokploy-network:
+    external: true
