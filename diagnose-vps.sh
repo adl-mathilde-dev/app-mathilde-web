@@ -172,5 +172,14 @@ echo "  - Ver puertos: netstat -tlnp | grep 5173"
 echo "  - Ver logs: tail -f logs/app.log"
 echo "  - Test externo: curl -I http://TU_IP_DEL_VPS:5173"
 
+# 14. Información específica para Dokploy
+echo ""
+print_info "14. Configuración para Dokploy:"
+echo "  - Puerto de producción: 8080"
+echo "  - Puerto de desarrollo: 5173"
+echo "  - Build command: npm run build"
+echo "  - Start command: npm run start"
+echo "  - Output directory: dist"
+
 echo ""
 print_success "Diagnóstico completado!"

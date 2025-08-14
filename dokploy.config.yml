@@ -1,0 +1,16 @@
+# Configuración específica para Dokploy
+# Este archivo ayuda a Dokploy a entender la estructura del proyecto
+
+app:
+  name: app-mathilde-web
+  type: web
+  framework: vite
+  build:
+    command: npm run build
+    output: dist
+  start:
+    command: npm run start
+  ports:
+    - 8080
+  environment:
+    NODE_ENV: production

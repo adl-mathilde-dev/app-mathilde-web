@@ -1,51 +1,10 @@
 version: '3.8'
 
 services:
-  app-mathilde-web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: production
+  app:
+    build: .
     ports:
       - "8080:80"
     environment:
       NODE_ENV: production
-      # Puerto del servidor
-      PORT: 80
-      HOSTNAME: 0.0.0.0
     restart: unless-stopped
-    labels:
-      - "app=mathilde-web"
-      - "environment=production"
-      - "version=1.0"
-    networks:
-      - app-mathilde-network
-
-  # Servicio de desarrollo (opcional)
-  app-mathilde-web-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "5173:5173"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    environment:
-      NODE_ENV: development
-      # Puerto del servidor de desarrollo
-      PORT: 5173
-      HOSTNAME: 0.0.0.0
-    command: npm run dev
-    profiles:
-      - dev
-    labels:
-      - "app=mathilde-web"
-      - "environment=development"
-      - "version=1.0"
-    networks:
-      - app-mathilde-network
-
-networks:
-  app-mathilde-network:
-    driver: bridge
