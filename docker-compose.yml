@@ -3,11 +3,11 @@ services:
     container_name: app-mathilde-web-prod
     build: .
     ports:
-      - "8080:80"
+      - "5173:5173"
     environment:
       NODE_ENV: production
       # Puerto del servidor
-      PORT: 80
+      PORT: 5173
       HOSTNAME: 0.0.0.0
     restart: unless-stopped
     networks:
@@ -20,11 +20,11 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "5173:5173"
+      - "5174:5174"
     environment:
       NODE_ENV: development
       # Puerto del servidor de desarrollo
-      PORT: 5173
+      PORT: 5174
       HOSTNAME: 0.0.0.0
     volumes:
       - .:/app
