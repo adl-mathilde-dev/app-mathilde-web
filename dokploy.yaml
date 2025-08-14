@@ -1,0 +1,44 @@
+name: app-mathilde-web
+description: Aplicación web de Mathilde
+
+# Configuración del build
+build:
+  dockerfile: Dockerfile
+  context: .
+
+# Configuración del servicio
+services:
+  - name: web
+    port: 80
+    target_port: 80
+    protocol: http
+    health_check:
+      path: /
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# Variables de entorno
+env:
+  NODE_ENV: production
+  PORT: 80
+  HOSTNAME: 0.0.0.0
+
+# Configuración de red
+networks:
+  - dokploy-network
+
+# Configuración de recursos
+resources:
+  memory: 512Mi
+  cpu: 0.5
+
+# Configuración de escalado
+scale:
+  replicas: 1
+
+# Configuración de persistencia (si es necesario)
+volumes: []
+
+# Configuración de secrets (si es necesario)
+secrets: []

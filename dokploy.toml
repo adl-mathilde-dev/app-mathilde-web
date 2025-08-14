@@ -1,0 +1,37 @@
+[project]
+name = "app-mathilde-web"
+description = "Aplicación web de Mathilde"
+
+[build]
+dockerfile = "Dockerfile"
+context = "."
+
+[deploy]
+strategy = "docker-compose"
+
+[[services]]
+name = "web"
+port = 80
+target_port = 80
+protocol = "http"
+
+[services.web.health_check]
+path = "/"
+interval = "30s"
+timeout = "10s"
+retries = 3
+
+[services.web.env]
+NODE_ENV = "production"
+PORT = "80"
+HOSTNAME = "0.0.0.0"
+
+[services.web.resources]
+memory = "512Mi"
+cpu = "0.5"
+
+[services.web.scale]
+replicas = 1
+
+[networks]
+app-network = { driver = "bridge" }
